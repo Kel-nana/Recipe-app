@@ -1,5 +1,9 @@
 class Recipe < ApplicationRecord
-    belongs_to :user
-    has_many :recipe_foods
+ database
+ 
+  belongs_to :user
+  has_many :recipe_foods
 
-  end
+  validates :name, presence: true
+end
+ 

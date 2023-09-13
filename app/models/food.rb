@@ -1,5 +1,6 @@
-class Food < ApplicationRecord
-    belongs_to :user
-    has_many :recipes_foods
+# frozen_string_literal: true
 
-  end
+class Food < ApplicationRecord
+  belongs_to :user
+  has_many :recipes_foods
+end
