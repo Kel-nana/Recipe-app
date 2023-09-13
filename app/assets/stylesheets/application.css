@@ -17,3 +17,15 @@
   display: flex;
   gap: 10px;
 }
+
+.post-errors-box {
+  display: flex;
+
+}
+
+.food-errors-ul {   
+  font-size: 12px;
+  font-weight: bold;
+  color:gray;
+  text-align: left;
+}
