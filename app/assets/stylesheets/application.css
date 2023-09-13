@@ -20,12 +20,11 @@
 
 .post-errors-box {
   display: flex;
-
 }
 
-.food-errors-ul {   
+.food-errors-ul {
   font-size: 12px;
   font-weight: bold;
-  color:gray;
+  color: gray;
   text-align: left;
 }
