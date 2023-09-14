@@ -1,2 +1,2 @@
-module FoodsHelper
+module RecipiesHelper
 end

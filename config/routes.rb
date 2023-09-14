@@ -9,12 +9,9 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :foods, expect: [update]
+    resources :foods, except: [:update]
     resources :recipes, only: %i[new create edit destroy]
   end
+
+  get '/public_recipes', to: 'recipes#public_recipes'
 end
- 
-  get '/public_recipies', to: 'recipies#public_recipies'
-  root 'recipies#public_recipies'
-end
- 
