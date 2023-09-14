@@ -1,4 +1,9 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user! # This ensures the user is logged in
+
+  def index
+    @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
+  end
   
   def index
     @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
