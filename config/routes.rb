@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :recipes, only: %i[new create edit destroy]
+    resources :recipes do
+    end
   end
 end
