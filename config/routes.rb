@@ -17,3 +17,4 @@ end
   get '/public_recipies', to: 'recipies#public_recipies'
   root 'recipies#public_recipies'
 end
+ 
