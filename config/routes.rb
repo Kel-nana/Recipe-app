@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :recipes, only: %i[new create edit destroy]
+
+    get '/public_recipies', to: 'recipies#public_recipies'
+    root 'recipies#public_recipies'
   end
-end
+ 
