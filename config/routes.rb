@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :recipes do
+    resources :recipes do     
     end
+    resources :foods do
+   end 
   end
 end
+
+

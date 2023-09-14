@@ -5,7 +5,8 @@
   <%= link_to 'Recipe', user_recipes_path(user_id: current_user.id), class: 'text-white h4' %>
 <% else %>
  <%= link_to "Login", new_user_session_path, class: "text-white h4" %>
-<% end %>    
+<% end %>  
+<%= link_to "Foods", user_foods_path(current_user), class: "text-white h4" %>  
    <%= link_to "Sign up", new_user_registration_path, class: "text-white h4" %>
     <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-white h4" %>
     <span class="text-muted">Toggleable via the navbar brand.</span>
