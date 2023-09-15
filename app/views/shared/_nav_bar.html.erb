@@ -4,6 +4,7 @@
     <% if current_user.present? %>
   <%= link_to 'Recipe', user_recipes_path(user_id: current_user.id), class: 'text-white h4 nav_link-css' %>
   <%= link_to "Foods", user_foods_path(current_user), class: "text-white h4 nav_link-css" %>
+  <%= link_to "General Shopping List", user_general_shopping_lists_path(current_user), class: "text-white h4 nav_link-css" %>
 <% else %>
  <p class = "display"></p>
 <% end %>  
