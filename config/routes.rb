@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :recipes do     
+    resources :recipes do
+      resources :recipe_foods
     end
+    resources :public_recipes, only: %i[index show]
     resources :foods do
-   end 
+    end
   end
 end
-
-

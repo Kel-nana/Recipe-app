@@ -1,13 +1,17 @@
+# frozen_string_literal: true
+
 class RecipesController < ApplicationController
   before_action :authenticate_user! # This ensures the user is logged in
 
   def index
+    @user = User.find(params[:user_id])
     @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
   end
-  
+
   def index
     @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
   end
+
   def show
     @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
@@ -16,11 +20,13 @@ class RecipesController < ApplicationController
     @is_public = @recipe.public?
     @food_item = RecipeFood.new if @is_owner
   end
+
   def new
     @user = User.find(params[:user_id])
     @recipe = Recipe.new
     @recipe.user = current_user
   end
+
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
@@ -30,6 +36,7 @@ class RecipesController < ApplicationController
       render :new
     end
   end
+
   def update
     @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
@@ -39,6 +46,7 @@ class RecipesController < ApplicationController
       render :show
     end
   end
+
   def destroy
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.find(params[:id])
@@ -49,6 +57,7 @@ class RecipesController < ApplicationController
       render :index, status: 400
     end
   end
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
