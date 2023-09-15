@@ -26,8 +26,8 @@ development:
   database: Recipe_app_development
   host: localhost
   username: postgres
-  # password: tulli2@23
-  password: admins
+  password: tulli2@23
+  # password: admins
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,8 +64,8 @@ test:
   database: Recipe_app_test
   host: localhost
   username: postgres
- # password: tulli2@23
-  password: admins
+  password: tulli2@23
+  # password: admins
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -91,5 +91,5 @@ production:
   <<: *default
   database: Recipe_app_production
   username: Recipe_app
-  # password: tulli2@23
-  password: admins
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  # password: admins

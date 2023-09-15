@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Quicksand:wght@300;500;600;700&display=swap");
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,7 +14,98 @@
  *= require_tree .
  *= require_self
  */
+
 #nav-display {
   display: flex;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
   gap: 10px;
+}
+
+.nav_link-css {
+  text-decoration: none;
+  border-left: 2px solid rgb(139, 121, 157);
+  border-right: 2px solid rgb(139, 121, 157);
+  padding: 0 10px;
+}
+h1 > span,
+.log-in-btn {
+  padding-left: 14vw;
+}
+
+. .bg-gradient {
+  position: absolute;
+  z-index: 99;
+}
+
+#bg-position {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(139, 121, 157);
+  background: rgb(55, 82, 14);
+  background: rgb(74, 36, 191);
+  background: linear-gradient(
+    123deg,
+    rgba(74, 36, 191, 0.5186449579831933) 16%,
+    rgba(70, 45, 42, 0.3533788515406162) 32%,
+    rgba(70, 27, 22, 0.3113620448179272) 49%,
+    rgba(125, 100, 72, 0.2329306722689075) 71%,
+    rgba(59, 51, 105, 0.5466561624649859) 83%
+  );
+  z-index: 1;
+}
+
+#bg-position > h1 {
+  margin-top: 7%;
+}
+.bg-image {
+  background-image: url("/assets/bg_img.jpg"); /* Use the correct path to your image */
+  background-size: cover; /* Adjust this as needed */
+  height: 70vh;
+  width: 100vw;
+  font-family: "Quicksand", sans-serif;
+  /* Other background styles like position, repeat, etc. */
+}
+
+.display {
+  display: none;
+}
+
+#login-btn {
+  width: 30vw;
+  height: 15vh;
+  background-color: rgb(139, 121, 157);
+  font-size: 1.6em;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 8px;
+}
+
+.log_out {
+  border-left: 5px solid rgb(139, 121, 157);
+  border-right: 5px solid rgb(139, 121, 157);
+  color: rgb(29, 27, 27) !important;
+}
+
+.input_label {
+  font-size: 2em !important;
+}
+
+.check_box_label {
+  color: rgb(5, 5, 5) !important;
+  font-weight: 600;
+}
+
+.input_field {
+  width: 28vw !important;
+}
+
+.sign_up {
+  color: rgb(139, 121, 157);
+  font-size: 3.5em !important;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 40%;
 }
