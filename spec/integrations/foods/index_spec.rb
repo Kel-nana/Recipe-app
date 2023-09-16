@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 RSpec.describe 'Food #index page', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'baqarnoorali', email: 'baqarnoorali@gmail.com', password: 'baqarnoorali')
+    @user = User.create!(name: 'isongkel', email: 'isongkel@gmail.com', password: 'isongkel')
     @food1 = Food.create!(name: 'first food', measurement_unit: 'kg', price: 300, quantity: 5, user_id: @user.id)
     @food2 = Food.create!(name: 'second food', measurement_unit: 'pound', price: 300, quantity: 4, user_id: @user.id)
 
@@ -12,7 +12,6 @@ RSpec.describe 'Food #index page', type: :feature do
     fill_in 'user[password]', with: @user.password
     click_button 'Log in'
   end
-
 
   it 'should display Add food  button' do
     visit new_user_food_path(@user)

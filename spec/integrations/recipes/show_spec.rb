@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 RSpec.describe 'Recipe #show page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'baqarnoorali', email: 'baqarnoorali@gmail.com', password: 'baqarnoorali')
+    @user = User.create(name: 'isongkel', email: 'isongkel@gmail.com', password: 'isongkel')
     @food = Food.create(name: 'first food', measurement_unit: 'kg', price: 300, quantity: 5, user_id: @user.id)
     @recipe = Recipe.create(name: 'first recipe', description: 'this is my first recipe',
                             preparation_time: '25', cooking_time: '13', user: @user)
@@ -46,8 +46,6 @@ RSpec.describe 'Recipe #show page', type: :feature do
     visit user_recipe_path(@user, @recipe)
     expect(page).to have_content('Recipe List')
   end
-
-
 
   it 'should display a Add ingredients button' do
     visit user_recipe_path(@user, @recipe)

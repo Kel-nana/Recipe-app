@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 RSpec.describe 'Food #index page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'baqarnoorali', email: 'baqarnoorali@gmail.com', password: 'baqarnoorali')
+    @user = User.create(name: 'isongkel', email: 'isongkel@gmail.com', password: 'isongkel')
     @recipe1 = Recipe.create(name: 'first recipe', description: 'this is my first recipe',
                              preparation_time: '25', cooking_time: '13', user: @user)
     @recipe2 = Recipe.create(name: 'second recipe', description: 'this is my second recipe', preparation_time: '10',

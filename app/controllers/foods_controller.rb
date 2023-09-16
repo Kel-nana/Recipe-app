@@ -4,8 +4,6 @@ class FoodsController < ApplicationController
   before_action :authenticate_user! # This ensures the user is logged in
   load_and_authorize_resource
 
-
-
   def index
     @foods = Food.where(user_id: current_user.id).includes(:user) # n+1problem fixed
   end
