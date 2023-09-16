@@ -1,15 +1,12 @@
-# frozen_string_literal: true
-
+# The `RecipesController` handles CRUD operations for recipes.
+# It allows users to create, view, edit, and delete recipes.
 class RecipesController < ApplicationController
   before_action :authenticate_user! # This ensures the user is logged in
+  load_and_authorize_resource
 
   def index
     @user = User.find(params[:user_id])
-    @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
-  end
-
-  def index
-    @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods)
+    @recipes = Recipe.where(user_id: current_user.id).includes(:recipe_foods) # n+1problem fixed
   end
 
   def show

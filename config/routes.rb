@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :recipes do
-      resources :recipe_foods
+      resources :recipe_foods, only: %i[new create edit update destroy]
+      resources :shopping_list, only: [:index], on: :member
     end
+
     resources :general_shopping_lists, only: [:index]
     resources :public_recipes, only: %i[index show]
     resources :foods do
