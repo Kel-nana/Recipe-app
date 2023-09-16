@@ -1,0 +1,31 @@
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4 " id = "nav-display">
+    <%= link_to "Home", root_path, class: "text-white h4 nav_link-css" %>
+    <% if current_user.present? %>
+  <%= link_to 'Recipe', user_recipes_path(user_id: current_user.id), class: 'text-white h4 nav_link-css' %>
+  <%= link_to "Foods", user_foods_path(current_user), class: "text-white h4 nav_link-css" %>
+  <%= link_to "General Shopping List", user_general_shopping_lists_path(current_user), class: "text-white h4 nav_link-css" %>
+
+
+<% else %>
+ <p class = "display"></p>
+<% end %>  
+ 
+<%= link_to "Public recipes", user_public_recipes_path(:user_id), class: "text-white h4 nav_link-css" %>  
+   <% if current_user.present? %>
+<%= link_to "Sign up", new_user_registration_path, class: "text-white h4 nav_link-css" %>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-white h4 log_out" %>
+<% else %>
+<%= link_to "Sign up", new_user_registration_path, class: "text-white h4 nav_link-css" %>
+<% end %>   
+   
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>

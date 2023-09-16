@@ -1,0 +1,13 @@
+<div class = "bg-image">
+<div id = "bg-position">
+<h1>Welcome:  <% if current_user.present? %>
+<br>
+ <span> Username: [ <%=current_user.name%> ]</span><br>
+  <span> E-mail: [ <%=current_user.email%> ]</span><br>
+<% else %>
+<div class="log-in-btn">
+<%= button_to "Log_in", new_user_session_path, class: "text-white h4", id: "login-btn" %>
+</div>
+<% end %> </h1>
+</div>
+</div>
