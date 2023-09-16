@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# The `PublicRecipesController` handles CRUD operations for recipes.
 class PublicRecipesController < ApplicationController
   def index
     @users = User.all

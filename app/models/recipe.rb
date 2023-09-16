@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# top-level documentation comment
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :recipe_foods

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RecipeFood, type: :model do 
+RSpec.describe RecipeFood, type: :model do
   jane = User.new(name: 'Jane', email: 'jane@example.com', password: 'password123')
 
   recipe = Recipe.new(name: 'otomboro',

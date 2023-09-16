@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# The `UserController` handles CRUD operations for recipes.
 class UsersController < ApplicationController
   def index; end
 

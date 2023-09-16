@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Food, type: :model do
   subject do
     Food.new(name: 'mfi',
-             measurement_unit: 'kg', 
+             measurement_unit: 'kg',
              price: 45)
   end
 
